@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function public_link() {
+        return route('app.profile', [ 'username' => 'some-username' ]);
+    }
 }
